@@ -25,7 +25,7 @@ namespace Fighting3D
         internal void PerformHitAction()
         {
             Debug.Log("hit anim start");
-            _anim.SetInteger(GameConstants.MASTER_STATE_INDEX, 0);
+            _anim.SetInteger(GameConstants.MASTER_STATE_INDEX, 2);
             _anim.SetTrigger(GameConstants.MASTER_STATE_DECISION);
             _anim.SetInteger(GameConstants.HIT_STATE_INDEX, 102);
             _anim.SetTrigger(GameConstants.HIT_STATE);
@@ -42,8 +42,6 @@ namespace Fighting3D
         internal const string HIT_STATE = "HitState";
         internal const string IDLE_STATE = "IdleState";
         internal const string IDLE_INDEX = "IdleIndex";
-
-
 
         #endregion Animation Keys
     }

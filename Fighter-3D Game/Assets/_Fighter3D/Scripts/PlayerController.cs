@@ -27,6 +27,8 @@ namespace Fighting3D
         private int _randomKickIndex = 0;
         internal int RandomKickIndex => _randomKickIndex;
 
+        AnimatorClipInfo[] m_CurrentClipInfo;
+
         private void Awake()
         {
             Init();
@@ -45,7 +47,7 @@ namespace Fighting3D
 
         private void Update()
         {
-            if (Input.GetKeyUp(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 anim.SetInteger("MasterStateIndex", 1);
                 anim.SetTrigger("MasterStateDecision");
@@ -56,17 +58,37 @@ namespace Fighting3D
                 _isPunching = true;
             }
 
-            if (Input.GetKeyUp(KeyCode.D))
+            //if(_isPunching)
+            //{
+            //    m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
+            //    float time = m_CurrentClipInfo[0].clip.length;
+
+            //    if (time > 0) 
+            //    {
+            //        time -= Time.deltaTime; 
+
+            //        if(time <= 0)
+            //        {
+            //            _isPunching = false;
+            //        }
+            //    }
+            //}
+
+            if (Input.GetKeyDown(KeyCode.D))
             {
-                anim.SetTrigger("WalkForward");
+                anim.SetInteger("MasterStateIndex", 0);
+                anim.SetTrigger("MasterStateDecision");
+                anim.SetInteger("MovementStateIndex", 1);
             }
 
-            if (Input.GetKeyUp(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A))
             {
-                anim.SetTrigger("WalkBackward");
+                anim.SetInteger("MasterStateIndex", 0);
+                anim.SetTrigger("MasterStateDecision");
+                anim.SetInteger("MovementStateIndex", 2);
             }
 
-            if(Input.GetKeyUp(KeyCode.G))
+            if(Input.GetKeyDown(KeyCode.G))
             {
                 anim.SetInteger("MasterStateIndex", 1);
                 anim.SetTrigger("MasterStateDecision");
@@ -75,6 +97,12 @@ namespace Fighting3D
                 anim.SetInteger("KickStateIndex", _randomKickIndex);
                 anim.SetTrigger("KickState");
             }
+        }
+
+        public void ResetData()
+        {
+            _isPunching = false;
+            IsKicking = false;
         }
     }
 }

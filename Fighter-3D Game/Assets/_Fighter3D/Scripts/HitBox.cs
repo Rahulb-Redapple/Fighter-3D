@@ -39,6 +39,15 @@ namespace Fighting3D
 
                         }
                     }
+                    else
+                    {
+                        Debug.Log("No hit receivers found");
+                    }
+                }
+                else
+                {
+                    
+                    //Debug.Log("No hit receivers found 2");
                 }
             }
         }
