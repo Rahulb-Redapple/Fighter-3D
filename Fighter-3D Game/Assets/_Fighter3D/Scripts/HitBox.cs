@@ -7,6 +7,7 @@ namespace Fighting3D
     public class HitBox : MonoBehaviour
     {
         [SerializeField] private BodyPart _bodyPart;
+        [SerializeField] private float _hitRadius = 0.05f;
 
         private PlayerController _playerController;
 
@@ -20,7 +21,7 @@ namespace Fighting3D
         private void Update()
         {
             RaycastHit hitInfo;
-            if(Physics.SphereCast(transform.position, 0.03f, Vector3.forward, out hitInfo))
+            if(Physics.SphereCast(transform.position, _hitRadius, Vector3.forward, out hitInfo))
             {
                 if(hitInfo.collider.gameObject.TryGetComponent(out HitReceiver hitReceiver))
                 {
@@ -44,18 +45,13 @@ namespace Fighting3D
                         Debug.Log("No hit receivers found");
                     }
                 }
-                else
-                {
-                    
-                    //Debug.Log("No hit receivers found 2");
-                }
             }
         }
 
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, 0.03f);
+            Gizmos.DrawWireSphere(transform.position, _hitRadius);
         }
 
     }

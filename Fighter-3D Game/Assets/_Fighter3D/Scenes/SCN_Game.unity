@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5890,6 +5890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bodyPart: 3
+  _hitRadius: 0.05
 --- !u!135 &1407519638
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6080,6 +6081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bodyPart: 3
+  _hitRadius: 0.05
 --- !u!135 &1420367462
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6099,7 +6101,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.03
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1420367463
 Transform:
@@ -6110,7 +6112,7 @@ Transform:
   m_GameObject: {fileID: 1420367460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0668, y: -0.0305, z: 0.011}
+  m_LocalPosition: {x: 0.0587, y: -0.0405, z: 0.0128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6459,6 +6461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bodyPart: 4
+  _hitRadius: 0.05
 --- !u!135 &1802201991
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6570,7 +6573,7 @@ Transform:
   m_GameObject: {fileID: 1865290652}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0707, y: 0.0285, z: -0.0077}
+  m_LocalPosition: {x: -0.06, y: 0.038, z: -0.019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6595,7 +6598,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.03
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1865290655
 MonoBehaviour:
@@ -6610,6 +6613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bodyPart: 4
+  _hitRadius: 0.05
 --- !u!1 &1975303113
 GameObject:
   m_ObjectHideFlags: 0
@@ -7337,6 +7341,7 @@ GameObject:
   - component: {fileID: 4325950723636236}
   - component: {fileID: 4325950723636238}
   - component: {fileID: 4325950723636237}
+  - component: {fileID: 4325950723636239}
   m_Layer: 0
   m_Name: ball_l
   m_TagString: Untagged
@@ -8336,6 +8341,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.19830772, y: 0.028253647, z: 0.07485215}
   m_Center: {x: 0.04557216, y: -0.0020312604, z: 0.002258033}
+--- !u!114 &4325950723636239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549665590100726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969e719ad4c29ff40be47fd00d07ae5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 0
+  _hitRadius: 0.05
 --- !u!4 &4329085033563792
 Transform:
   m_ObjectHideFlags: 0
