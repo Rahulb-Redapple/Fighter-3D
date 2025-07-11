@@ -11,10 +11,15 @@ namespace Fighting3D
 
         [SerializeField] private List<HitReceiver> hitReceivers = new List<HitReceiver>();
 
-        private void Awake()
+        private HitType _hitType;
+        private EssentialConfigData _essentialConfigData;
+
+        internal void Init(EssentialConfigData essentialConfigData)
         {
-            hitReceivers.ForEach(hitReceiver => hitReceiver.Init(this));
+            _essentialConfigData = essentialConfigData;
+           // hitReceivers.ForEach(hitReceiver => hitReceiver.Init(this, _essentialConfigData));
         }
+
 
         private void Start()
         {
@@ -22,13 +27,16 @@ namespace Fighting3D
             _anim.SetTrigger(GameConstants.IDLE_STATE);
         }
 
-        internal void PerformHitAction()
+        internal void PerformHitAction(HitType hitType)
         {
-            Debug.Log("hit anim start");
+            _hitType = hitType;
+         
             _anim.SetInteger(GameConstants.MASTER_STATE_INDEX, 2);
             _anim.SetTrigger(GameConstants.MASTER_STATE_DECISION);
-            _anim.SetInteger(GameConstants.HIT_STATE_INDEX, 102);
+            _anim.SetInteger(GameConstants.HIT_STATE_INDEX, (int)_hitType /*Random.Range(101, 104)*/);
             _anim.SetTrigger(GameConstants.HIT_STATE);
+
+            Debug.Log($"Got Hit of type :: {_hitType}");
         }
     }
 

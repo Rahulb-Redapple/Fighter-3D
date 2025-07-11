@@ -1947,7 +1947,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.27227724
+        functionName: ResetData
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 2e71a1c509f34984f954101c150cda9b,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -2128,7 +2136,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.28217822
+        functionName: ResetData
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 2e71a1c509f34984f954101c150cda9b,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -3215,7 +3231,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.5
+      - time: 0.26637554
         functionName: ResetData
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 2e71a1c509f34984f954101c150cda9b,
@@ -3584,7 +3600,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.36681223
+        functionName: ResetData
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 2e71a1c509f34984f954101c150cda9b,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -3766,7 +3790,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.8873874
+      - time: 0.3930131
         functionName: ResetData
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 2e71a1c509f34984f954101c150cda9b,
@@ -8841,7 +8865,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.28712872
+        functionName: ResetData
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 2e71a1c509f34984f954101c150cda9b,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -9022,7 +9054,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.2821782
+        functionName: ResetData
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 2e71a1c509f34984f954101c150cda9b,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

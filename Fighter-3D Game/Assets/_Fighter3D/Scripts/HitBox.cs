@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,13 +10,16 @@ namespace Fighting3D
         [SerializeField] private BodyPart _bodyPart;
         [SerializeField] private float _hitRadius = 0.05f;
 
-        private PlayerController _playerController;
+        private FighterController _controller;
 
-        private PunchType _punchType = PunchType.NONE;
+        int _punchIndex = 0;
+        int _kickIndex = 0;
 
-        internal void Init(PlayerController playerController)
+        private AttackType _attackType = AttackType.NONE;
+
+        internal void Init(FighterController playerController)
         {
-            _playerController = playerController;
+            _controller = playerController;
         }
 
         private void Update()
@@ -23,21 +27,30 @@ namespace Fighting3D
             RaycastHit hitInfo;
             if(Physics.SphereCast(transform.position, _hitRadius, Vector3.forward, out hitInfo))
             {
+                Debug.Log("1");
                 if(hitInfo.collider.gameObject.TryGetComponent(out HitReceiver hitReceiver))
                 {
-                    if(hitReceiver != null)
+                    Debug.Log("2");
+                    if (hitReceiver != null && hitReceiver.GetActorId() != PhotonNetwork.LocalPlayer.ActorNumber)
                     {
+                        Debug.Log("3");
                         Debug.Log(hitReceiver.gameObject.name);
+                        HitReceiverHandler otherhandler = hitReceiver.GetHandler();
+                        _attackType = _controller.AttackType;
 
-                        if(_playerController.IsPunching)
+                        if(_controller.IsPunching)
                         {
-                            _punchType = (PunchType)_playerController.RandomPunchIndex;
-                            hitReceiver.ReceiveHitType(_punchType);
-                            _playerController.IsPunching = false;
+                            _punchIndex = _controller.punchIndex;
+                            otherhandler.GetPhotonView().RPC(nameof(otherhandler.ReceiveHit), RpcTarget.All, _attackType, _punchIndex);
+                            Debug.Log("4");
+                            ResetData();
                         }
-                        if(_playerController.IsKicking)
+                        if(_controller.IsKicking)
                         {
+                            _kickIndex = _controller.kickIndex;
+                            otherhandler.GetPhotonView().RPC(nameof(otherhandler.ReceiveHit), RpcTarget.All, _attackType, _kickIndex);
 
+                            ResetData();
                         }
                     }
                     else
@@ -54,5 +67,11 @@ namespace Fighting3D
             Gizmos.DrawWireSphere(transform.position, _hitRadius);
         }
 
+        internal void ResetData()
+        {
+            _controller.IsPunching = false;
+            _controller.IsKicking = false;
+            _attackType = AttackType.NONE;
+        }
     }
 }

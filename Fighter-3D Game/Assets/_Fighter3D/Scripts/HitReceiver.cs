@@ -1,22 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Fighting3D
 {
     public class HitReceiver : MonoBehaviour
     {
-        private AIController _controller;
+        private HitReceiverHandler _handler;
+        private int _actorId;
 
-        internal void Init(AIController aIController)
+        internal void Init(HitReceiverHandler hitReceiverHandler, int actorId)
         {
-            _controller = aIController;
+            _handler = hitReceiverHandler;
+            _actorId = actorId;
         }
 
-        internal void ReceiveHitType(PunchType punchType)
-        {
-            Debug.Log(punchType.ToString());
-            _controller.PerformHitAction();
-        }
+        internal HitReceiverHandler GetHandler() { return _handler; }
+        internal int GetActorId() { return _actorId;}
     }
 }

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98f2f94f0f674b8418991870ddf400b7, type: 3}
+  m_Name: HitMappingConfig
+  m_EditorClassIdentifier: 
+  _hitMapsList:
+  - _punchType: 101
+    _hitTypesList: 65000000
+  - _punchType: 102
+    _hitTypesList: 66000000
+  - _punchType: 103
+    _hitTypesList: 67000000
+  - _punchType: 104
+    _hitTypesList: 66000000
+  - _punchType: 107
+    _hitTypesList: 65000000
+  - _punchType: 108
+    _hitTypesList: 66000000
